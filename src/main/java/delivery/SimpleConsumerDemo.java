@@ -13,8 +13,7 @@ import kafka.javaapi.message.ByteBufferMessageSet;
 import kafka.message.MessageAndOffset;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class SimpleConsumerDemo {
 
