@@ -1,30 +1,50 @@
 package delivery;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
+
+import org.apache.log4j.Logger;
+
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
 
-public class Producer extends Thread {
+public class Producer extends MessageThread{
 	private final kafka.javaapi.producer.Producer<Integer, String> producer;
 	private final String topic;
 	private final Properties props = new Properties();
-
+	private List<String> lstMessages = new ArrayList<String>();
+	private static final Logger logger = Logger.getLogger(TestKafkaDelivery.class.getName());
+	
 	public Producer(String topic) {
+		logger.info("initializing producer");
+		this.topic = topic;
 		props.put("serializer.class", "kafka.serializer.StringEncoder");
 		props.put("metadata.broker.list", "localhost:9092");
-		// Use random partitioner. Don't need the key type. Just set it to Integer.
-		// The message is of type String.
 		producer = new kafka.javaapi.producer.Producer<Integer, String>(new ProducerConfig(props));
-		this.topic = topic;
 	}
 
 	public void run() {
-		int messageNo = 1;
-		while (true) {
-			String messageStr = new String("Message_" + messageNo);
-			producer.send(new KeyedMessage<Integer, String>(topic, messageStr));
-			messageNo++;
+		logger.info("producer thread is running");
+		try {
+			int messageNo = 1;
+			while (messageNo<=10) {
+				String message = new String("message_" + messageNo);
+				producer.send(new KeyedMessage<Integer, String>(topic, message));
+				logger.info("producer: " + message);
+				lstMessages.add(message);
+				messageNo++;
+			}
+		}catch (Exception ex) {
+			logger.error(ex);
+		}finally {
+			producer.close();
+			logger.info("producer closed");			
 		}
 	}
 
+	public List<String> getMessages() {
+		return lstMessages;
+	}
+	
 }

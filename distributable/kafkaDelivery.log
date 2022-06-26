@@ -1,0 +1,110 @@
+2022-06-26 20:49:04,917 - delivery.TestKafkaDelivery - INFO -  ***********************************************
+  * TestNG case description: 
+  *	1. initiate a kafka producer and a consumer 
+  *	2. produce 10 messages and store them in a list 
+  *	3. consume 10 messages and store them in a list 
+  *	4. compare lists to verify messages are received in the same order they were send 
+  ***********************************************/
+2022-06-26 20:49:05,150 - kafka.utils.VerifiableProperties - INFO - Verifying properties
+2022-06-26 20:49:05,176 - kafka.utils.VerifiableProperties - INFO - Property auto.commit.interval.ms is overridden to 1000
+2022-06-26 20:49:05,176 - kafka.utils.VerifiableProperties - INFO - Property group.id is overridden to group1
+2022-06-26 20:49:05,176 - kafka.utils.VerifiableProperties - INFO - Property zookeeper.connect is overridden to 127.0.0.1:2181
+2022-06-26 20:49:05,177 - kafka.utils.VerifiableProperties - INFO - Property zookeeper.session.timeout.ms is overridden to 400
+2022-06-26 20:49:05,177 - kafka.utils.VerifiableProperties - INFO - Property zookeeper.sync.time.ms is overridden to 200
+2022-06-26 20:49:05,195 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], Connecting to zookeeper instance at 127.0.0.1:2181
+2022-06-26 20:49:05,200 - org.I0Itec.zkclient.ZkEventThread - INFO - Starting ZkClient event thread.
+2022-06-26 20:49:05,204 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:zookeeper.version=3.3.3-1203054, built on 11/17/2011 05:47 GMT
+2022-06-26 20:49:05,205 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:host.name=host.docker.internal
+2022-06-26 20:49:05,205 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:java.version=17.0.2
+2022-06-26 20:49:05,205 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:java.vendor=Oracle Corporation
+2022-06-26 20:49:05,205 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:java.home=H:\Program Files\Java\jdk-17.0.2
+2022-06-26 20:49:05,205 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:java.class.path=kafkaDelivery.jar;dependencies\com.beust.jcommander_1.78.0.jar;dependencies\org.testng_7.4.0.r202105021533.jar;dependencies\org.webjars.jquery_3.5.1.jar
+2022-06-26 20:49:05,205 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:java.library.path=H:\Program Files\Java\jdk-17.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;H:\Program Files\Python310\Scripts\;H:\Program Files\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\adb;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;H:\Program Files\Git\cmd;H:\Program Files\Python310\Scripts;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;H:\Ruby30-x64\bin;G:\Ruby27-x64\bin;C:\Users\Spyros\AppData\Local\Microsoft\WindowsApps;G:\Programs\java\jdk-12.0.2\bin;H:\Program Files\JetBrains\RubyMine 2021.3.2\bin;;C:\Users\Spyros\AppData\Local\GitHubDesktop\bin;H:\Program Files\Microsoft VS Code\bin;H:\Program Files\Python310\Scripts;;.
+2022-06-26 20:49:05,206 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:java.io.tmpdir=C:\Users\Spyros\AppData\Local\Temp\
+2022-06-26 20:49:05,206 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:java.compiler=<NA>
+2022-06-26 20:49:05,206 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:os.name=Windows 10
+2022-06-26 20:49:05,206 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:os.arch=amd64
+2022-06-26 20:49:05,206 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:os.version=10.0
+2022-06-26 20:49:05,206 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:user.name=Spyros
+2022-06-26 20:49:05,206 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:user.home=C:\Users\Spyros
+2022-06-26 20:49:05,206 - org.apache.zookeeper.ZooKeeper - INFO - Client environment:user.dir=H:\git-repos\eclipse\kafka\distributable
+2022-06-26 20:49:05,207 - org.apache.zookeeper.ZooKeeper - INFO - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=400 watcher=org.I0Itec.zkclient.ZkClient@63eef88a
+2022-06-26 20:49:05,255 - org.apache.zookeeper.ClientCnxn - INFO - Opening socket connection to server /127.0.0.1:2181
+2022-06-26 20:49:05,260 - org.apache.zookeeper.ClientCnxn - INFO - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2022-06-26 20:49:05,269 - org.apache.zookeeper.ClientCnxn - INFO - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x10004d289610017, negotiated timeout = 6000
+2022-06-26 20:49:05,270 - org.I0Itec.zkclient.ZkClient - INFO - zookeeper state changed (SyncConnected)
+2022-06-26 20:49:05,284 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], starting auto committer every 1000 ms
+2022-06-26 20:49:05,294 - kafka.utils.VerifiableProperties - INFO - Verifying properties
+2022-06-26 20:49:05,295 - kafka.utils.VerifiableProperties - INFO - Property metadata.broker.list is overridden to localhost:9092
+2022-06-26 20:49:05,296 - kafka.utils.VerifiableProperties - INFO - Property serializer.class is overridden to kafka.serializer.StringEncoder
+2022-06-26 20:49:05,352 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], begin registering consumer group1_Spyros-PC-1656265745193-750c6bbf in ZK
+2022-06-26 20:49:05,369 - kafka.client.ClientUtils$ - INFO - Fetching metadata from broker id:0,host:localhost,port:9092 with correlation id 0 for 1 topic(s) Set(topic1)
+2022-06-26 20:49:05,371 - kafka.producer.SyncProducer - INFO - Connected to localhost:9092 for producing
+2022-06-26 20:49:05,389 - kafka.producer.SyncProducer - INFO - Disconnecting from localhost:9092
+2022-06-26 20:49:05,389 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], end registering consumer group1_Spyros-PC-1656265745193-750c6bbf in ZK
+2022-06-26 20:49:05,393 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], starting watcher executor thread for consumer group1_Spyros-PC-1656265745193-750c6bbf
+2022-06-26 20:49:05,407 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], begin rebalancing consumer group1_Spyros-PC-1656265745193-750c6bbf try #0
+2022-06-26 20:49:05,418 - kafka.producer.SyncProducer - INFO - Connected to host.docker.internal:9092 for producing
+2022-06-26 20:49:05,420 - delivery.TestKafkaDelivery - INFO - producer: message_1
+2022-06-26 20:49:05,422 - delivery.TestKafkaDelivery - INFO - producer: message_2
+2022-06-26 20:49:05,423 - delivery.TestKafkaDelivery - INFO - producer: message_3
+2022-06-26 20:49:05,425 - delivery.TestKafkaDelivery - INFO - producer: message_4
+2022-06-26 20:49:05,426 - delivery.TestKafkaDelivery - INFO - producer: message_5
+2022-06-26 20:49:05,427 - delivery.TestKafkaDelivery - INFO - producer: message_6
+2022-06-26 20:49:05,429 - delivery.TestKafkaDelivery - INFO - producer: message_7
+2022-06-26 20:49:05,430 - delivery.TestKafkaDelivery - INFO - producer: message_8
+2022-06-26 20:49:05,431 - delivery.TestKafkaDelivery - INFO - producer: message_9
+2022-06-26 20:49:05,432 - delivery.TestKafkaDelivery - INFO - producer: message_10
+2022-06-26 20:49:05,433 - kafka.producer.Producer - INFO - Shutting down producer
+2022-06-26 20:49:05,433 - kafka.producer.ProducerPool - INFO - Closing all sync producers
+2022-06-26 20:49:05,435 - kafka.producer.SyncProducer - INFO - Disconnecting from host.docker.internal:9092
+2022-06-26 20:49:05,435 - delivery.TestKafkaDelivery - INFO - producer closed
+2022-06-26 20:49:05,518 - kafka.consumer.ConsumerFetcherManager - INFO - [ConsumerFetcherManager-1656265745274] Stopping leader finder thread
+2022-06-26 20:49:05,518 - kafka.consumer.ConsumerFetcherManager - INFO - [ConsumerFetcherManager-1656265745274] Stopping all fetchers
+2022-06-26 20:49:05,521 - kafka.consumer.ConsumerFetcherManager - INFO - [ConsumerFetcherManager-1656265745274] All connections stopped
+2022-06-26 20:49:05,522 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], Cleared all relevant queues for this fetcher
+2022-06-26 20:49:05,524 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], Cleared the data chunks in all the consumer message iterators
+2022-06-26 20:49:05,525 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], Committing all offsets after clearing the fetcher queues
+2022-06-26 20:49:05,526 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], Releasing partition ownership
+2022-06-26 20:49:05,528 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], Consumer group1_Spyros-PC-1656265745193-750c6bbf rebalancing the following partitions: ArrayBuffer(0) for topic topic1 with consumers: List(group1_Spyros-PC-1656265745193-750c6bbf-0)
+2022-06-26 20:49:05,530 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], group1_Spyros-PC-1656265745193-750c6bbf-0 attempting to claim partition 0
+2022-06-26 20:49:05,536 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], group1_Spyros-PC-1656265745193-750c6bbf-0 successfully owned partition 0 for topic topic1
+2022-06-26 20:49:05,537 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], Updating the cache
+2022-06-26 20:49:05,539 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], Consumer group1_Spyros-PC-1656265745193-750c6bbf selected partitions : topic1:0: fetched offset = 471546: consumed offset = 471546
+2022-06-26 20:49:05,541 - kafka.consumer.ConsumerFetcherManager$LeaderFinderThread - INFO - [group1_Spyros-PC-1656265745193-750c6bbf-leader-finder-thread], Starting 
+2022-06-26 20:49:05,541 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], end rebalancing consumer group1_Spyros-PC-1656265745193-750c6bbf try #0
+2022-06-26 20:49:05,550 - kafka.utils.VerifiableProperties - INFO - Verifying properties
+2022-06-26 20:49:05,550 - kafka.utils.VerifiableProperties - INFO - Property client.id is overridden to group1
+2022-06-26 20:49:05,551 - kafka.utils.VerifiableProperties - INFO - Property metadata.broker.list is overridden to host.docker.internal:9092
+2022-06-26 20:49:05,551 - kafka.utils.VerifiableProperties - INFO - Property request.timeout.ms is overridden to 30000
+2022-06-26 20:49:05,553 - kafka.client.ClientUtils$ - INFO - Fetching metadata from broker id:0,host:host.docker.internal,port:9092 with correlation id 0 for 1 topic(s) Set(topic1)
+2022-06-26 20:49:05,553 - kafka.producer.SyncProducer - INFO - Connected to host.docker.internal:9092 for producing
+2022-06-26 20:49:05,555 - kafka.producer.SyncProducer - INFO - Disconnecting from host.docker.internal:9092
+2022-06-26 20:49:05,567 - kafka.consumer.ConsumerFetcherThread - INFO - [ConsumerFetcherThread-group1_Spyros-PC-1656265745193-750c6bbf-0-0], Starting 
+2022-06-26 20:49:05,569 - kafka.consumer.ConsumerFetcherManager - INFO - [ConsumerFetcherManager-1656265745274] Added fetcher for partitions ArrayBuffer([[topic1,0], initOffset 471546 to broker id:0,host:host.docker.internal,port:9092] )
+2022-06-26 20:49:05,595 - delivery.TestKafkaDelivery - INFO - consumer: message_1
+2022-06-26 20:49:05,595 - delivery.TestKafkaDelivery - INFO - consumer: message_2
+2022-06-26 20:49:05,597 - delivery.TestKafkaDelivery - INFO - consumer: message_3
+2022-06-26 20:49:05,598 - delivery.TestKafkaDelivery - INFO - consumer: message_4
+2022-06-26 20:49:05,598 - delivery.TestKafkaDelivery - INFO - consumer: message_5
+2022-06-26 20:49:05,599 - delivery.TestKafkaDelivery - INFO - consumer: message_6
+2022-06-26 20:49:05,600 - delivery.TestKafkaDelivery - INFO - consumer: message_7
+2022-06-26 20:49:05,600 - delivery.TestKafkaDelivery - INFO - consumer: message_8
+2022-06-26 20:49:05,601 - delivery.TestKafkaDelivery - INFO - consumer: message_9
+2022-06-26 20:49:05,601 - delivery.TestKafkaDelivery - INFO - consumer: message_10
+2022-06-26 20:49:05,602 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], ZKConsumerConnector shutting down
+2022-06-26 20:49:05,603 - kafka.consumer.ConsumerFetcherManager - INFO - [ConsumerFetcherManager-1656265745274] Stopping leader finder thread
+2022-06-26 20:49:05,604 - kafka.consumer.ConsumerFetcherManager$LeaderFinderThread - INFO - [group1_Spyros-PC-1656265745193-750c6bbf-leader-finder-thread], Shutting down
+2022-06-26 20:49:05,605 - kafka.consumer.ConsumerFetcherManager$LeaderFinderThread - INFO - [group1_Spyros-PC-1656265745193-750c6bbf-leader-finder-thread], Stopped 
+2022-06-26 20:49:05,605 - kafka.consumer.ConsumerFetcherManager$LeaderFinderThread - INFO - [group1_Spyros-PC-1656265745193-750c6bbf-leader-finder-thread], Shutdown completed
+2022-06-26 20:49:05,605 - kafka.consumer.ConsumerFetcherManager - INFO - [ConsumerFetcherManager-1656265745274] Stopping all fetchers
+2022-06-26 20:49:05,606 - kafka.consumer.ConsumerFetcherThread - INFO - [ConsumerFetcherThread-group1_Spyros-PC-1656265745193-750c6bbf-0-0], Shutting down
+2022-06-26 20:49:05,608 - kafka.consumer.SimpleConsumer - WARN - Reconnect due to socket error: null
+2022-06-26 20:49:05,609 - kafka.consumer.ConsumerFetcherThread - INFO - [ConsumerFetcherThread-group1_Spyros-PC-1656265745193-750c6bbf-0-0], Stopped 
+2022-06-26 20:49:05,609 - kafka.consumer.ConsumerFetcherThread - INFO - [ConsumerFetcherThread-group1_Spyros-PC-1656265745193-750c6bbf-0-0], Shutdown completed
+2022-06-26 20:49:05,612 - kafka.consumer.ConsumerFetcherManager - INFO - [ConsumerFetcherManager-1656265745274] All connections stopped
+2022-06-26 20:49:05,618 - org.I0Itec.zkclient.ZkEventThread - INFO - Terminate ZkClient event thread.
+2022-06-26 20:49:05,621 - org.apache.zookeeper.ZooKeeper - INFO - Session: 0x10004d289610017 closed
+2022-06-26 20:49:05,622 - org.apache.zookeeper.ClientCnxn - INFO - EventThread shut down
+2022-06-26 20:49:05,622 - kafka.consumer.ZookeeperConsumerConnector - INFO - [group1_Spyros-PC-1656265745193-750c6bbf], ZKConsumerConnector shut down completed
+2022-06-26 20:49:05,623 - delivery.TestKafkaDelivery - INFO - consumer closed
