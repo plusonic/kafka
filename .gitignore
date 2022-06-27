@@ -1,1 +1,82 @@
 /target/
+distributable/test-output/bullet_point.png
+distributable/test-output/collapseall.gif
+distributable/test-output/emailable-report.html
+distributable/test-output/failed.png
+distributable/test-output/index.html
+distributable/test-output/jquery.min.js
+distributable/test-output/junitreports/TEST-delivery.TestKafkaDelivery.xml
+distributable/test-output/navigator-bullet.png
+distributable/test-output/old/index.html
+distributable/test-output/old/Suite/classes.html
+distributable/test-output/old/Suite/groups.html
+distributable/test-output/old/Suite/index.html
+distributable/test-output/old/Suite/main.html
+distributable/test-output/old/Suite/methods-alphabetical.html
+distributable/test-output/old/Suite/methods-not-run.html
+distributable/test-output/old/Suite/methods.html
+distributable/test-output/old/Suite/reporter-output.html
+distributable/test-output/old/Suite/Test.properties
+distributable/test-output/old/Suite/testng.xml.html
+distributable/test-output/old/Suite/toc.html
+distributable/test-output/passed.png
+distributable/test-output/skipped.png
+distributable/test-output/Suite/Test.html
+distributable/test-output/Suite/Test.xml
+distributable/test-output/testng-reports.css
+distributable/test-output/testng-reports.js
+distributable/test-output/testng-reports1.css
+distributable/test-output/testng-reports2.js
+distributable/test-output/testng-results.xml
+distributable/test-output/testng.css
+kafkaDelivery.log
+settings/kill.bat
+test-output/bullet_point.png
+test-output/collapseall.gif
+test-output/Default suite/Default test.html
+test-output/Default suite/Default test.xml
+test-output/Default suite/testng-failed.xml
+test-output/emailable-report.html
+test-output/failed.png
+test-output/index.html
+test-output/jquery.min.js
+test-output/junitreports/TEST-delivery.SimpleConsumerDemo.xml
+test-output/junitreports/TEST-delivery.TestKafkaDelivery.xml
+test-output/junitreports/TEST-tests.TestEvents.xml
+test-output/junitreports/TEST-tests.TestKafkaDelivery.xml
+test-output/junitreports/TEST-tests.VerifyEvents.xml
+test-output/navigator-bullet.png
+test-output/old/Default suite/classes.html
+test-output/old/Default suite/Default test.properties
+test-output/old/Default suite/groups.html
+test-output/old/Default suite/index.html
+test-output/old/Default suite/main.html
+test-output/old/Default suite/methods-alphabetical.html
+test-output/old/Default suite/methods-not-run.html
+test-output/old/Default suite/methods.html
+test-output/old/Default suite/reporter-output.html
+test-output/old/Default suite/testng.xml.html
+test-output/old/Default suite/toc.html
+test-output/old/index.html
+test-output/old/Suite/classes.html
+test-output/old/Suite/groups.html
+test-output/old/Suite/index.html
+test-output/old/Suite/main.html
+test-output/old/Suite/methods-alphabetical.html
+test-output/old/Suite/methods-not-run.html
+test-output/old/Suite/methods.html
+test-output/old/Suite/reporter-output.html
+test-output/old/Suite/Test.properties
+test-output/old/Suite/testng.xml.html
+test-output/old/Suite/toc.html
+test-output/passed.png
+test-output/skipped.png
+test-output/Suite/Test.html
+test-output/Suite/Test.xml
+test-output/testng-failed.xml
+test-output/testng-reports.css
+test-output/testng-reports.js
+test-output/testng-reports1.css
+test-output/testng-reports2.js
+test-output/testng-results.xml
+test-output/testng.css
