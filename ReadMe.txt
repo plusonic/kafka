@@ -10,7 +10,7 @@ to execute as a test from command line:
  5. after test is executed, a folder named "test-output" will be created. You can open index.html to see the results
  6. Additionally, KafkaDelivery.log is generated with all detailed steps executed
  
-to open the eclipse project:
+to execute test from eclipse project:
  1. download project: https://github.com/plusonic/kafka
  2. download and install eclipse for java developers
  3. open eclipse, go to marketplace and install "TestNG for Eclipse" and "Eclipse Java Development Tools", if not already installed
